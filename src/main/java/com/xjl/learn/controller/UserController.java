@@ -65,19 +65,4 @@ public class UserController {
         return "你已通过验证";
     }
 
-    @UserLoginToken
-    @PostMapping("/user/testpost")
-    public String testPost(@RequestBody Map<String,Object> pd) throws InterruptedException, ExecutionException {
-
-        //HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
-        userService.testFind("one");
-        CompletableFuture<String> page1 = userService.testFind("one");
-        CompletableFuture<String> page2 = userService.testFind("two");
-        CompletableFuture<String> page3 = userService.testFind("three");
-        //join() 的作用：让“主线程”等待“子线程”结束之后才能继续运行
-        CompletableFuture.allOf(page1,page2,page3).join();
-        System.err.println(page1.get() + page2.get() + page3.get());
-
-        return "你已通过验证";
-    }
 }

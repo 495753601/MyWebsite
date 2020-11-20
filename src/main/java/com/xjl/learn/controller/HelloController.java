@@ -20,13 +20,4 @@ public class HelloController {
         return "hello";
     }
 
-    @GetMapping("/test")
-    public ModelAndView test(){
-        Map<String,Object> content = new HashMap<String,Object>();
-        content.put("name","sss");
-        ModelAndView mv = new ModelAndView();
-        mv.addObject("content",content);
-        mv.setViewName("/index.html");
-        return mv;
-    }
 }
