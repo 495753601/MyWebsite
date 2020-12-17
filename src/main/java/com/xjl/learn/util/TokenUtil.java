@@ -4,6 +4,7 @@ import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.xjl.learn.entity.User;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 
 /**
@@ -25,5 +26,11 @@ public class TokenUtil {
                 .withExpiresAt(end)
                 .sign(Algorithm.HMAC256(user.getPassword()));
         return token;
+    }
+    //获取token中的id
+    public static String getIdByToken(HttpServletRequest httpServletRequest) {
+        String token = httpServletRequest.getHeader("token");// 从 http 请求头中取出 token
+        String userId = JWT.decode(token).getAudience().get(0);;
+        return userId;
     }
 }

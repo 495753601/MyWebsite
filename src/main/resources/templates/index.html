@@ -3,10 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="./scripts/jquery-3.5.1.min.js"></script>
     <title>首页</title>
 </head>
 <body>
     <div>首页</div>
+    <button id="register">注册</button>
     <div>内容：<td th:text="${content.get(&quot;name&quot;)}"></td></div>
 </body>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#register").click(function(){
+            window.location.href = "register.html"
+        });
+    });
+</script>
 </html>

@@ -1,10 +1,6 @@
 package com.xjl.learn.controller;
 
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
-
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * @Description:
@@ -19,5 +15,4 @@ public class HelloController {
     public String hello(){
         return "hello";
     }
-
 }

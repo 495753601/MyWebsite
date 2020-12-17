@@ -32,7 +32,6 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object object) throws Exception {
 
         String token = httpServletRequest.getHeader("token");// 从 http 请求头中取出 token
-        //System.err.println("内容"+httpServletRequest.getHeader("Referer"));
         // 如果不是映射到方法直接通过
         //instanceof：Java的保留关键字。它的作用是测试它左边的对象是否是它右边的类的实例，返回 boolean 的数据类型。
         if(!(object instanceof HandlerMethod)){
@@ -61,7 +60,7 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
                 String userId;
                 try {
                     userId = JWT.decode(token).getAudience().get(0);
-                    //System.err.println(userId);
+                    System.err.println(userId);
                 }catch (JWTDecodeException j){
                     throw new RuntimeException("401");
                 }

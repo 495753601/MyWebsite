@@ -16,10 +16,10 @@ public class UserProvider {
     //通过id获取用户信息
     public String getAccountByUserId(String pd){
 
-        Integer userId = Integer.parseInt(pd);
+        Integer userId = Integer.valueOf(pd);
         SQL sql  = new SQL() {
             {
-                SELECT("user_id as userId,user_name as userName,user_password as password")
+                SELECT("user_id as userId,user_name as userName,user_password as password,user_icon as icon,user_nickname as nickName")
                         .FROM("user")
                         .WHERE("user_id = #{userId}");
             }
@@ -46,16 +46,22 @@ public class UserProvider {
     public String addAccountMassage(User user){
 
         String userName = user.getUserName();
-        String userAge = user.getUserAge();
+        String sex = user.getSex();
         String nickName = user.getNickName();
         String password = user.getPassword();
+        String birthday = user.getBirthday();
+        String email = user.getEmail();
+        String introduceText = user.getIntroduceText();
         SQL execSql = new SQL(){
             {
                 INSERT_INTO("user")
                         .VALUES("user_name","#{userName}")
-                        .VALUES("user_age","#{userAge}")
+                        .VALUES("user_sex","#{sex}")
                         .VALUES("user_nickname","#{nickName}")
                         .VALUES("user_password","#{password}")
+                        .VALUES("user_birth","#{birthday}")
+                        .VALUES("user_email","#{email}")
+                        .VALUES("user_autograph","#{introduceText}")
                         .VALUES("create_time","now()");
             }
         };

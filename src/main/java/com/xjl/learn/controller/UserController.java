@@ -11,14 +11,8 @@ import com.xjl.learn.util.TokenUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.context.request.RequestContextHolder;
-import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.servlet.http.HttpServletRequest;
-import java.io.IOException;
-import java.util.Map;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutionException;
 
 
 /**
@@ -59,10 +53,19 @@ public class UserController {
         userService.addAccountMassage(user);
         return R.ok();
     }
+    //获取用户信息
     @UserLoginToken
-    @GetMapping("/user/testget")
-    public String testGet(){
+    @PostMapping("/user/queryUserMsg")
+    public R queryUserMsg(HttpServletRequest httpServletRequest){
+
+        String userId = TokenUtil.getIdByToken(httpServletRequest);
+        User user = userService.getAccountByUserId(userId);
+        log.info("参数："+ user.toString());
+        return R.ok().put("msg",user);
+    }
+    @UserLoginToken
+    @GetMapping("/user/test")
+    public String getMessage(){
         return "你已通过验证";
     }
-
 }

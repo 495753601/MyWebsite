@@ -16,6 +16,11 @@ public class User {
     Integer userId;
     String userName;
     String password;
-    String userAge;
+    String surePassword;
+    String sex;
+    String icon;
     String nickName;
+    String birthday;
+    String email;
+    String introduceText;
 }
