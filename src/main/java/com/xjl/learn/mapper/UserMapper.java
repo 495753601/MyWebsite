@@ -6,8 +6,6 @@ import org.apache.ibatis.annotations.InsertProvider;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.SelectProvider;
 
-import java.util.Map;
-
 /**
  * @Description:用户
  * @author: xjl

@@ -6,9 +6,6 @@ import com.xjl.learn.util.Md5Util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
-import java.util.Map;
-
 /**
  * @Description:
  * @author: xjl

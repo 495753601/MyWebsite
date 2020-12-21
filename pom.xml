@@ -42,6 +42,11 @@
             <artifactId>mybatis-spring-boot-starter</artifactId>
             <version>1.3.1</version>
         </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+            <version>1.1.10</version>
+        </dependency>
 
         <!--整合mysql-->
         <dependency>
@@ -70,6 +75,13 @@
             <artifactId>lombok</artifactId>
             <version>1.18.4</version>
             <scope>provided</scope>
+        </dependency>
+
+        <!--  pagehelper  -->
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper-spring-boot-starter</artifactId>
+            <version>1.2.5</version>
         </dependency>
     </dependencies>
 

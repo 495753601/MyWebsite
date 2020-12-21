@@ -4,7 +4,6 @@ import com.xjl.learn.annotation.UserLoginToken;
 import com.xjl.learn.entity.R;
 import com.xjl.learn.entity.User;
 import com.xjl.learn.exception.LoginCheckException;
-import com.xjl.learn.exception.RRException;
 import com.xjl.learn.service.UserService;
 import com.xjl.learn.util.Md5Util;
 import com.xjl.learn.util.TokenUtil;
