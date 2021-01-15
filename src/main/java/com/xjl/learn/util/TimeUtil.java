@@ -7,7 +7,12 @@ package com.xjl.learn.util;
  */
 public class TimeUtil {
     private final String name = "sss";
+    private int age;
     public String getName(){
         return name;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 }
